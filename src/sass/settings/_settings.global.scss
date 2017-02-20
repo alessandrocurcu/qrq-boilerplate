@@ -1,0 +1,52 @@
+@include border-box-sizing;
+
+html {
+  @include qrq-system-font-stack;
+  @include typi-base();
+  color: #333;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  text-decoration: none;
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+  color: #B5CBE9;
+  &:hover {
+    color: darken(#B5CBE9, 20%);
+  }
+}
+
+
+img {
+  max-width: 100%;
+}
+
+input {
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}

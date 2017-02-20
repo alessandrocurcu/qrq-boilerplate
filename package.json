@@ -1,0 +1,49 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate per semplici siti statici",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "AleQRQ",
+  "license": "ISC",
+  "engines": {
+    "node": "7.5.0"
+  },
+  "dependencies": {
+    "express": "^4.14.1",
+    "normalize.css": "^5.0.0",
+    "susy": "^2.2.12",
+    "typi": "^2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "contentful": "^3.8.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-print": "^2.0.1",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-uncss": "^1.0.6",
+    "gulp-useref": "^3.1.2",
+    "gulp-util": "^3.0.8",
+    "modularscale-sass": "^2.1.1",
+    "request": "^2.79.0",
+    "run-sequence": "^1.2.2",
+    "sass-module-importer": "^1.4.0",
+    "var": "^0.2.0"
+  }
+}

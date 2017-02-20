@@ -1,0 +1,133 @@
+/**
+ * Mixin per i link
+ *
+ * Crea un set base di link; l'idea è che questo mixin non ha dei parametri di
+ * default definiti: in questo modo sei costretto "amichevolmente" ha dichiarare tutti
+ * i quattro stati dei link
+ *
+ * ESEMPIO HTML:
+ *
+ * a {
+ *  @include links(orange, blue, yellow, teal);
+ * }
+ *
+ * FONTE: https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/
+ *
+ */
+
+@mixin qrq-links ($link, $visited, $hover, $active) {
+  & {
+    color: $link;
+    &:visited {
+      color: $visited;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active, &:focus {
+      color: $active;
+    }
+  }
+}
+
+/**
+ * Centra
+ *
+ */
+
+@mixin qrq-centra() {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+/**
+ * System Font
+ */
+
+@mixin qrq-system-font-stack() {
+  font-family: -apple-system, 
+                BlinkMacSystemFont, 
+                "Segoe UI", 
+                Roboto, 
+                Oxygen-Sans, 
+                Ubuntu, 
+                Cantarell, 
+                "Helvetica Neue", 
+                sans-serif;
+}
+
+/**
+ * Background Cover
+ *
+ */
+
+@mixin qrq-bkgCover($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+
+/**
+ * box_shadow
+ *
+ * https://gist.github.com/paulmelnikow/7fcfbe4f68e5df7fe326
+ */
+
+@mixin box_shadow ($level) {
+
+  @if $level == 1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  } @else if $level == 2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  } @else if $level == 3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  } @else if $level == 4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  } @else if $level == 5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+}
+
+@mixin double-shadow($color) {
+  @include box-shadow(0 1px 0 lighten($color, 10%) inset, 0 -1px 0 darken($color, 10%) inset);
+}
+
+// Ritorna valori numerici senza unità di misura
+// @see https://github.com/nex3/sass/issues/533#issuecomment-11675408
+@function strip-unit($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function fromEmToRem($number) {
+  $remSize: strip-unit($number);
+  @return #{$remSize}rem;
+}
+
+
+
+// Visually hide an element
+// http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin rotate($degree, $duration) {
+  transform: rotate($degree);
+  transition: transform $duration;
+}
+
+@mixin scaleY($degree, $duration) {
+  transform: scaleY($degree);
+  transition: transform $duration;
+}

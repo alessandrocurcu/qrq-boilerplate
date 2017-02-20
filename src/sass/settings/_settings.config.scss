@@ -1,0 +1,45 @@
+/**
+ * Configurazioni della griglia con Susy.
+ */
+
+$susy: (
+        columns: 12,
+        container: 100%,
+        gutters: 1/2,
+        gutter-position: after,
+        global-box-sizing: border-box
+);
+
+/**
+ * Breakpoints comuni (https://goo.gl/pVFYw8)
+ */
+
+$breakpoints: (
+  for-tablet-portrait-up: 600px,
+  for-tablet-landscape-up: 900px,
+  desktop-up: 1200px,
+  big-desktop-up: 1900px
+);
+
+
+/**
+ * Configurazioni della tipografia base responsive con Typi.
+ */
+
+$typi: (
+  null: (16px, 1.4),
+  for-tablet-portrait-up: 18px
+);
+
+
+/**
+ * Configurazioni della scala tipografica.
+ */
+
+$ms-base: 1em;
+$ms-ratio: $major-third;
+
+
+/**
+ * Configurazioni per la gestione degli z-index
+ */
