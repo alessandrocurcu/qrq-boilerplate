@@ -28,6 +28,8 @@ var sass = require("gulp-sass");
 var uncss = require("gulp-uncss");
 var csso = require("gulp-csso");
 var combineMq = require('gulp-combine-mq');
+var stripCssComments = require('gulp-strip-css-comments');
+var cssbeautify = require('gulp-cssbeautify');
 
 // PUG ans HTML
 var pug = require("gulp-pug");
@@ -99,6 +101,11 @@ gulp.task("sass", function () {
         .pipe(autoprefixer({
             browsers: ["last 6 versions"]
         }))
+        .pipe(stripCssComments())
+        .pipe(combineMq({
+            beautify: false
+        }))
+        .pipe(cssbeautify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.sass.dev.dest))
         .pipe(browserSync.stream());
