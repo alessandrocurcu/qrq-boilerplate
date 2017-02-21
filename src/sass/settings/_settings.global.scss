@@ -3,7 +3,8 @@
 html {
   @include qrq-system-font-stack;
   @include typi-base();
-  color: #333;
+  background-color: $bgc;
+  color: $tc;
 }
 
 body {
@@ -28,10 +29,6 @@ a {
   text-decoration: none;
   background-color: transparent; /* 1 */
   -webkit-text-decoration-skip: objects; /* 2 */
-  color: #B5CBE9;
-  &:hover {
-    color: darken(#B5CBE9, 20%);
-  }
 }
 
 
