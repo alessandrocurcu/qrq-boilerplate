@@ -1,21 +1,34 @@
 @include border-box-sizing;
 
+/**
+ * 1. Evita dei problemi circa l'ingrandimento dei font su Webkit e Windows mobile
+ * 2. Toglie l'alone grigio sui link su mobile una volta che vengono premuti.
+ */
 html {
   @include qrq-system-font-stack;
   @include typi-base();
+  -webkit-text-size-adjust: 100%; // [1]
+  -ms-text-size-adjust:100% // [1]
+  -webkit-tap-highlight-color: transparent; // [2]
   background-color: $bgc;
   color: $tc;
 }
 
-body {
+html, body, div, object, iframe, fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block; 
+}
+
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-h1, h2, h3, p {
-  margin: 0;
-}
-
-ul {
+ol, ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -32,8 +45,9 @@ a {
 }
 
 
-img {
+img, object, video {
   max-width: 100%;
+  border: 0;
 }
 
 input {
