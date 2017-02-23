@@ -1,0 +1,49 @@
+/* Timeline Container */
+.timeline {
+  border-left: 4px solid #dddddd;
+  padding-bottom: 3em;
+  position: relative; 
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    //left: -1.47em;
+    left: -22px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: #dddddd;
+    border: 5px solid #dddddd;
+  }
+}
+
+/* Individual Timeline Item */
+.tl-node {
+  padding-left: 1em;
+  margin-bottom: 3em;
+  position: relative; 
+}
+
+.tl-node a {
+  display: block; 
+}
+  
+.tl-node:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #fff;
+  border: 5px solid #dddddd; 
+}
+
+/* Timestamp */
+.tl-stamp {
+  font-size: 0.7em;
+  color: gray; 
+}
+
+/************End Timeline**************/
