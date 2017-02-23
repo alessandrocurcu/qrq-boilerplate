@@ -7,15 +7,21 @@ html {
   color: $tc;
 }
 
-body {
+html, body, div, object, iframe, fieldset {
   margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block; 
 }
 
 h1, h2, h3, p {
   margin: 0;
 }
 
-ul {
+ol, ul {
   list-style: none;
   margin: 0;
   padding: 0;
