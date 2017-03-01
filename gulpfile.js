@@ -145,6 +145,23 @@ gulp.task("js:watch", ["js"], function () {
 });
 
 
+/**
+ * Le regole del linting mettile nella root directory in .eslintrc. Usa .eslintignore per ignorare specifiche cartelle.
+ */
+
+gulp.task('lint', function() {
+  return gulp.src('lib/**').pipe(eslint({
+    'rules':{
+        'quotes': [1, 'single'],
+        'semi': [1, 'always']
+    }
+  }))
+  .pipe(eslint.format())
+  // Brick on failure to be super strict
+  .pipe(eslint.failOnError());
+});
+
+
 /* Images */
 gulp.task("image", function(){
     log("Ottimizzo immagini");
