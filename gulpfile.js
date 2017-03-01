@@ -1,45 +1,46 @@
-var gulp = require("gulp");
+const gulp = require("gulp");
 
 // Core utilities
-var fs = require("fs");
-var path = require("path");
+const fs = require("fs");
+const path = require("path");
 
 // Third parties utilities
-var del = require("del");
-var util = require("gulp-util");
-var plumber = require("gulp-plumber");
-var gulprint = require("gulp-print");
-var browserSync = require("browser-sync");
-var nodemon = require("gulp-nodemon");
-var runSequence = require("run-sequence");
-var gulpif = require("gulp-if");
-var contentful = require("contentful");
-var request = require("request");
-var useref = require("gulp-useref");
+const del = require("del");
+const util = require("gulp-util");
+const plumber = require("gulp-plumber");
+const gulprint = require("gulp-print");
+const browserSync = require("browser-sync");
+const nodemon = require("gulp-nodemon");
+const runSequence = require("run-sequence");
+const gulpif = require("gulp-if");
+const contentful = require("contentful");
+const request = require("request");
+const useref = require("gulp-useref");
 
 // Personal configuration
-var config = require("./gulpconfig.js")();
+const config = require("./gulpconfig.js")();
 
 // SASS and CSS
-var sourcemaps = require("gulp-sourcemaps");
-var moduleImporter = require("sass-module-importer");
-var autoprefixer = require("gulp-autoprefixer");
-var sass = require("gulp-sass");
-var uncss = require("gulp-uncss");
-var csso = require("gulp-csso");
-var combineMq = require('gulp-combine-mq');
-var stripCssComments = require('gulp-strip-css-comments');
-var cssbeautify = require('gulp-cssbeautify');
+const sourcemaps = require("gulp-sourcemaps");
+const moduleImporter = require("sass-module-importer");
+const autoprefixer = require("gulp-autoprefixer");
+const sass = require("gulp-sass");
+const uncss = require("gulp-uncss");
+const csso = require("gulp-csso");
+const combineMq = require('gulp-combine-mq');
+const stripCssComments = require('gulp-strip-css-comments');
+const cssbeautify = require('gulp-cssbeautify');
 
 // PUG ans HTML
-var pug = require("gulp-pug");
+const pug = require("gulp-pug");
 
 // JS
-var browserify = require("gulp-browserify");
-var uglify = require("gulp-uglify");
+const browserify = require("gulp-browserify");
+const uglify = require("gulp-uglify");
+const eslint = require('gulp-eslint');
 
 // Images
-var imagemin = require("gulp-imagemin");
+const imagemin = require("gulp-imagemin");
 
 
 
