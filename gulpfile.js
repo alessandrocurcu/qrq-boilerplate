@@ -45,7 +45,10 @@ const imagemin = require("gulp-imagemin");
 
 
 
-/* pug */
+/**
+ * pug
+ * 1. Non ricompila tutti i file ma solo quelli modificati. L'opzione "extra" permette di ricompilare i file pug quando viene modificato un include.
+ */
 gulp.task("pug", function() {
     log("Compilo pug in html");
 
@@ -54,7 +57,7 @@ gulp.task("pug", function() {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(util.env.prod ? newer(config.pug.prod.dest) : newer(config.pug.dev.dest))
+        .pipe(util.env.prod ? newer(config.pug.prod.dest) : newer({dest: config.pug.dev.dest, extra: "src/views/**/_*.pug"})) // [1]
         .pipe(gulprint(function(filepath){
             return "File compilato: " + filepath;
         }))
