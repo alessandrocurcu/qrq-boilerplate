@@ -8,7 +8,7 @@ html {
   @include qrq-system-font-stack;
   @include typi-base();
   -webkit-text-size-adjust: 100%; // [1]
-  -ms-text-size-adjust:100% // [1]
+  -ms-text-size-adjust:100%; // [1]
   -webkit-tap-highlight-color: transparent; // [2]
   background-color: $bgc;
   color: $tc;
