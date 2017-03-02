@@ -1,2 +1,10 @@
-window.addEventListener("DOMContentLoaded", function() {    
-});
+(function() {
+  "use strict";
+
+  window.addEventListener("DOMContentLoaded", function() { 
+    console.log("Benvenuto!");   
+  });
+  
+}());
+
+
