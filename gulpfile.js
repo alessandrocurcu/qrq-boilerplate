@@ -16,6 +16,7 @@ const gulpif = require("gulp-if");
 const contentful = require("contentful");
 const request = require("request");
 const useref = require("gulp-useref");
+const newer = require('gulp-newer');
 
 // Personal configuration
 const config = require("./gulpconfig.js")();
@@ -50,11 +51,12 @@ gulp.task("pug", function() {
 
     return gulp.src(config.pug.toCompile)
         .pipe(plumber())
-        .pipe(gulprint(function(filepath){
-            return "File compilato: " + filepath;
-        }))
         .pipe(pug({
             pretty: true
+        }))
+        .pipe(util.env.prod ? newer(config.pug.prod.dest) : newer(config.pug.dev.dest))
+        .pipe(gulprint(function(filepath){
+            return "File compilato: " + filepath;
         }))
         .pipe(util.env.prod ? gulp.dest(config.pug.prod.dest) : gulp.dest(config.pug.dev.dest))
         .pipe(browserSync.stream());
