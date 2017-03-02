@@ -29,7 +29,8 @@ module.exports = function() {
                 dest : base_dev_dir + "css"
             },
             prod: {
-                dest: base_prod_dir + "css"
+                dest: base_prod_dir + "css",
+                uncss : base_prod_dir + "*.html"
             }
         },
 

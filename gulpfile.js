@@ -91,11 +91,11 @@ gulp.task("sass", function () {
         .pipe(autoprefixer({
             browsers: ["last 6 versions"]
         }))
-        .pipe(uncss({html: ["docs/*.html"]}))
+        .pipe(uncss({html: [config.sass.prod.uncss]}))
         .pipe(combineMq({
             beautify: false
         }))
-        .pipe(gulp.dest("docs/css"));
+        .pipe(gulp.dest(config.sass.prod.dest));
     }
     gulp.src(config.sass.toCompile) // [2]
         .pipe(plumber())
