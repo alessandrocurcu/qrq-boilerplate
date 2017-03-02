@@ -8,7 +8,6 @@ $tc: #424242; // text-color
 /**
  * Configurazioni della griglia con Susy.
  */
-
 $susy: (
         columns: 12,
         container: 100%,
@@ -20,13 +19,18 @@ $susy: (
 /**
  * Breakpoints comuni (https://goo.gl/pVFYw8)
  */
-
 $breakpoints: (
   for-tablet-portrait-up: 600px,
   for-tablet-landscape-up: 900px,
   desktop-up: 1200px,
   big-desktop-up: 1900px
 );
+
+// Breakpoints short version
+$tp: map_get($breakpoints, for-tablet-portrait-up);
+$tl: map_get($breakpoints, for-tablet-landscape-up);
+$dk: map_get($breakpoints, desktop-up);
+$bdk: map_get($breakpoints, big-desktop-up);
 
 
 /**
@@ -35,7 +39,10 @@ $breakpoints: (
 
 $typi: (
   null: (16px, 1.4),
-  for-tablet-portrait-up: 18px
+  for-tablet-portrait-up: 18px,
+  for-tablet-landscape-up: 18px,
+  desktop-up: 18px,
+  big-desktop-up: 18px
 );
 
 
