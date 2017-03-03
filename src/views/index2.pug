@@ -1,0 +1,15 @@
+extends _base.pug
+block personal
+    meta(name="description", content="")
+    title Nuovo titolo
+block link
+    // build:css css/main.min.css
+    link(href="css/main.css", rel="stylesheet")
+    // endbuild
+block main
+  include modules/timeline.pug
+block bodyScript
+    // build:js js/main.min.js
+    script(src="js/main.js")
+    // endbuild
+    
