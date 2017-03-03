@@ -46,7 +46,14 @@ module.exports = function() {
         },
 
         img: {
-            dest: base_prod_dir + "img"
+            toCompile: "src/img/*.{png,svg,jpg}",
+            dev: {
+                watch: "src/img/*.{png,svg,jpg}",
+                dest: base_dev_dir + "img"
+            },
+            prod: {
+                dest: base_prod_dir + "img"
+            }
         },
 
         useref: {

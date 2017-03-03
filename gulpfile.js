@@ -170,12 +170,21 @@ gulp.task('lint', function() {
 /* Images */
 gulp.task("image", function(){
     log("Ottimizzo immagini");
-    return gulp.src("dev/img/*.{png,svg}")
+    return gulp.src(config.img.toCompile)
         .pipe(plumber())
         .pipe(imagemin({
             progressive: true
         }))
-        .pipe(gulp.dest(config.img.dest));
+        .pipe(gulprint(function(filepath){
+            return "Immagine ottimizzata: " + filepath;
+        }))
+        .pipe(util.env.prod ? newer(config.img.prod.dest) : newer(config.img.dev.dest))
+        .pipe(util.env.prod ? gulp.dest(config.img.prod.dest) : gulp.dest(config.img.dev.dest));
+});
+
+gulp.task("image:watch", ["image"], function () {
+    log("Osservo le immagini");
+    gulp.watch(config.img.dev.watch, ["image"]);
 });
 
 /* Data */
@@ -221,7 +230,7 @@ gulp.task("serve", function () {
 });
 
 gulp.task("dev", function() {
-    runSequence("serve", "browser-sync", ["sass:watch", "pug:watch", "js:watch"]);
+    runSequence("serve", "browser-sync", ["sass:watch", "pug:watch", "js:watch", "image:watch"]);
 });
 
 
