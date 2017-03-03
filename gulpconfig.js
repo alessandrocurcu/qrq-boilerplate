@@ -45,6 +45,10 @@ module.exports = function() {
             }
         },
 
+        nodemon: {
+            ignore: ["./node_modules", "gulpfile.js", "gulpconfig.js", "src/js/**/*.js", base_dev_dir + "js/**/*.js", base_prod_dir + "js/**/*.js"] 
+        },
+
         img: {
             toCompile: "src/img/*.{png,svg,jpg}",
             dev: {

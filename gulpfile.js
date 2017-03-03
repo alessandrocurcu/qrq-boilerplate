@@ -211,7 +211,7 @@ gulp.task("serve", function () {
             "PORT": 3000,
             "NODE_ENV": isDev ? "dev" : "prod"
         },
-        ignore: ["./node_modules", "gulpfile.js", "gulpconfig.js", "dev/js/**/.js"]
+        ignore: [config.nodemon.ignore]
     };
 
     return nodemon(options)
