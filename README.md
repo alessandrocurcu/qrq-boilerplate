@@ -24,13 +24,23 @@ Boilerplate.
 * Autoprefixer
 * Uncss
 * Combine media queries
-* Useref
+* Useref (con CSSO)
 
 ### JS
-* Useref
+* Useref (con Uglify)
 
 ### Immagini
 * Imagemin
 
+## JS Bundler
+* Browserify
+
+## Hosting
+### Netlify
+* Deve avere `gulp` installato come dependency.
+* Hai bisogno di un file .nvmrc nella root del progetto per dire a Netlify quale versione di NodeJS usare: `node -v  > .nvmrc`
+
 ## ToDo
 * Autoprefixer: definisci nel task i browser da supportare.
+* Aggiorna a Gulp 4.
+* Definisci ESLint.
