@@ -122,15 +122,6 @@ gulp.task("sass:watch", ["sass"], function () {
     gulp.watch(config.sass.dev.watch, ["sass"]);
 });
 
-gulp.task("browser-sync", function() {
-    browserSync.init({
-        proxy: "http://localhost:3000",
-        //browser: "firefoxdeveloperedition",
-        browser: "google chrome canary",
-        port: 7000
-    });
-});
-
 /* script */
 gulp.task("js", function() {
     log("Incorporo insieme gli script");
@@ -202,6 +193,16 @@ gulp.task("contentful", function(cb) {
 });
 
 /* Development */
+
+gulp.task("browser-sync", function() {
+    browserSync.init({
+        proxy: "http://localhost:3000",
+        //browser: "firefoxdeveloperedition",
+        browser: "google chrome canary",
+        port: 7000
+    });
+});
+
 gulp.task("serve", function () {
     var isDev = true;
     var options = {
