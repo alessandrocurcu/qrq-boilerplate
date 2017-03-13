@@ -51,3 +51,16 @@
 @import "modules/modules.timeline";
 
 // PAGES
+
+body {
+  background-color: red;
+  height: 100vh;
+  position: relative;
+  p {
+    position: absolute;
+    background-color: green;
+    font-size: 16px;
+    bottom: 0;
+    //line-height: 18px;
+  }
+}

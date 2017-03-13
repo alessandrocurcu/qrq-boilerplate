@@ -8,9 +8,9 @@ html(lang="it")
         block link
         block headScript
     body
-        header.masthead(role="banner")  
-        main
+        .container
+            include _modules/_header.pug
             block main
-        footer(role="contentInfo")
+            include _modules/_footer.pug
         block bodyScript
 

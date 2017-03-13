@@ -11,9 +11,9 @@ html(lang="it")
         // endbuild
     body
         .container
-          header.masthead(role="banner")  
-          main
-          footer(role="contentInfo")
+            include _modules/_header.pug
+            block main
+            include _modules/_footer.pug
         // build:js js/main.min.js
         script(src="js/main.js")
         // endbuild
