@@ -6,7 +6,14 @@ block link
     // build:css css/main.min.css
     link(href="css/main.css", rel="stylesheet")
     // endbuild
-block main
+block body
+  body
+      .container
+          include _modules/_header.pug
+          main
+            h1 Esempio
+            include _components/_timeline.pug
+          include _modules/_footer.pug
 block bodyScript
     // build:js js/main.min.js
     script(src="js/main.js")

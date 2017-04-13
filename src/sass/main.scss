@@ -36,31 +36,21 @@
 @import "typi";
 
 // TOOLS
-@import "tools/tools.mixin";
-@import "tools/tools.flat-colors";
+@import "00_tools/tools.mixin";
+@import "00_tools/tools.flat-colors";
 
 // SETTINGS
-@import "settings/settings.normalize_form"; 
-@import "settings/settings.config";
-@import "settings/settings.global";
+@import "01_settings/settings.normalize_form"; 
+@import "01_settings/settings.config";
+@import "01_settings/settings.global";
+
+// VENDORS
 
 // COMPONENTS
-@import "components/components.exemple";
+@import "03_components/components.exemple";
 
 // MODULES
-@import "modules/modules.timeline";
+@import "04_modules/modules.timeline";
 
 // PAGES
 
-body {
-  background-color: red;
-  height: 100vh;
-  position: relative;
-  p {
-    position: absolute;
-    background-color: green;
-    font-size: 16px;
-    bottom: 0;
-    //line-height: 18px;
-  }
-}

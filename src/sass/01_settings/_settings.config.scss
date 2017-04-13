@@ -20,36 +20,34 @@ $susy: (
  * Breakpoints comuni (https://goo.gl/pVFYw8)
  */
 $breakpoints: (
-  for-tablet-portrait-up: 600px,
-  for-tablet-landscape-up: 900px,
-  desktop-up: 1200px,
-  big-desktop-up: 1900px
+  tp: 600px, // for-tablet-portrait-up
+  tl: 900px, // for-tablet-landscape-up
+  dk: 1200px, // desktop-up
+  bdk: 1900px // big-desktop-up
 );
 
 // Breakpoints short version
-$tp: map_get($breakpoints, for-tablet-portrait-up);
-$tl: map_get($breakpoints, for-tablet-landscape-up);
-$dk: map_get($breakpoints, desktop-up);
-$bdk: map_get($breakpoints, big-desktop-up);
+$tp: map_get($breakpoints, tp);
+$tl: map_get($breakpoints, tl);
+$dk: map_get($breakpoints, dk);
+$bdk: map_get($breakpoints, bdk);
 
 
 /**
  * Configurazioni della tipografia base responsive con Typi.
  */
-
 $typi: (
   null: (16px, 1.4),
-  for-tablet-portrait-up: 18px,
-  for-tablet-landscape-up: 18px,
-  desktop-up: 18px,
-  big-desktop-up: 18px
+  tp: 18px,
+  tl: 18px,
+  dk: 18px,
+  bdk: 18px
 );
 
 
 /**
  * Configurazioni della scala tipografica.
  */
-
 $ms-base: 1em;
 $ms-ratio: $major-third;
 

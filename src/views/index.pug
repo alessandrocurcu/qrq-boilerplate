@@ -1,21 +1,20 @@
-doctype html
-html(lang="it")
-    head
-        meta(charset='utf-8')
-        meta(http-equiv="X-UA-Compatible", content="IE=Edge")
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        meta(name="description", content="")
-        title Nuovo titolo
-        // build:css css/main.min.css
-        link(href="css/main.css", rel="stylesheet")
-        // endbuild
-    body
-        .container
-            include _modules/_header.pug
-            block main
-            include _modules/_footer.pug
-        // build:js js/main.min.js
-        script(src="js/main.js")
-        // endbuild
-    
+extends _base.pug
+block personal
+    meta(name="description", content="")
+    title Nuovo titolo
+block link
+    // build:css css/main.min.css
+    link(href="css/main.css", rel="stylesheet")
+    // endbuild
+block body
+  body
+      .container
+          include _modules/_header.pug
+          main
+            h1 Esempio
+          include _modules/_footer.pug
+block bodyScript
+    // build:js js/main.min.js
+    script(src="js/main.js")
+    // endbuild
     
