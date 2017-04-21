@@ -1,7 +1,6 @@
 /**
  * Variabili
  */
-
 $bgc: #f5f6f6; // background-color
 $tc: #424242; // text-color
 
@@ -9,21 +8,27 @@ $tc: #424242; // text-color
  * Configurazioni della griglia con Susy.
  */
 $susy: (
-        columns: 12,
-        container: 100%,
-        gutters: 1/2,
-        gutter-position: after,
-        global-box-sizing: border-box
+  columns: 12,
+  container: 100%,
+  gutters: 1/2,
+  gutter-position: after,
+  global-box-sizing: border-box
 );
 
 /**
  * Breakpoints comuni (https://goo.gl/pVFYw8)
+ * Questi sono usati da typi e sono i breakpoint principali.
+ * I tweakpoint sono per piccoli aggiustamenti.
  */
 $breakpoints: (
-  tp: 600px, // for-tablet-portrait-up
-  tl: 900px, // for-tablet-landscape-up
-  dk: 1200px, // desktop-up
-  bdk: 1900px // big-desktop-up
+  tp: 600px, // for-tablet-portrait-up // 33.333em
+  tl: 900px, // for-tablet-landscape-up // 50.000em
+  dk: 1200px, // desktop-up // 66.667em
+  bdk: 1900px // big-desktop-up // 105.556em
+);
+
+$tweakpoints: (
+
 );
 
 // Breakpoints short version
