@@ -35,6 +35,10 @@ Boilerplate.
 ## JS Bundler
 * Browserify
 
+## Utilities
+* [Image-size](https://github.com/image-size/image-size) per ottenere semplicemente le dimensioni di un'immagine.
+* [Imagesloaded](http://imagesloaded.desandro.com/): gestisce il caricamento delle immagini
+
 ## Hosting
 ### Netlify
 * Deve avere `gulp` installato come dependency.

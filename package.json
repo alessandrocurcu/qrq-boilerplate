@@ -44,6 +44,8 @@
     "gulp-uncss": "^1.0.6",
     "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.8",
+    "image-size": "^0.5.1",
+    "imagesloaded": "^4.1.1",
     "modularscale-sass": "^2.1.1",
     "request": "^2.79.0",
     "run-sequence": "^1.2.2",

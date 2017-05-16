@@ -1,8 +1,10 @@
-@include border-box-sizing;
+//@include border-box-sizing;
 
 /**
  * 1. Evita dei problemi circa l'ingrandimento dei font su Webkit e Windows mobile
  * 2. Toglie l'alone grigio sui link su mobile una volta che vengono premuti.
+ * 3. This makes it easier to change box-sizing in plugins or other components that leverage other behavior.
+ * 4. Migliora la visualizzazione dei font.
  */
 html {
   @include qrq-system-font-stack;
@@ -10,8 +12,15 @@ html {
   -webkit-text-size-adjust: 100%; // [1]
   -ms-text-size-adjust:100%; // [1]
   -webkit-tap-highlight-color: transparent; // [2]
+  box-sizing: border-box; // [3]
+  -webkit-font-smoothing: antialiased; // [4]
+  -moz-osx-font-smoothing: grayscale; // [4]
   background-color: $bgc;
   color: $tc;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; // [3]
 }
 
 html, body, div, object, iframe, fieldset {
@@ -42,11 +51,20 @@ a {
   text-decoration: none;
   background-color: transparent; /* 1 */
   -webkit-text-decoration-skip: objects; /* 2 */
+  outline: none;
+}
+
+/**
+ * Display links when the <a> element has no text value but the href attribute has a link:
+ */
+a[href^="http"]:empty::before {
+  content: attr(href);
 }
 
 
 img, object, video {
   max-width: 100%;
+  height: auto;
   border: 0;
 }
 
@@ -60,4 +78,10 @@ input {
  */
 svg:not(:root) {
   overflow: hidden;
+}
+
+// Per l'attributo hidden
+// https://hiddedevries.nl/en/blog/2017-04-11-on-hiding-content
+[hidden] { 
+  display: none; 
 }

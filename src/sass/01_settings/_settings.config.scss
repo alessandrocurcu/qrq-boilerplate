@@ -49,13 +49,19 @@ $typi: (
   bdk: 18px
 );
 
-
 /**
  * Configurazioni della scala tipografica.
  */
 $ms-base: 1em;
 $ms-ratio: $major-third;
 
+// H1, text-1
+$h1-map: (
+  null: ms(0),
+  tp: ms(0),
+  tl: ms(0),
+  dk: (ms(2), vr(1.4))
+);
 
 /**
  * Configurazioni per la gestione degli z-index
